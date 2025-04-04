@@ -1,0 +1,29 @@
+name: Update Server Status
+
+on:
+  workflow_dispatch:
+    inputs:
+      status:
+        description: 'Server Status (true/false)'
+        required: true
+        default: 'true'
+
+jobs:
+  update_status:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Update server status
+        run: |
+          echo '{ "server_status": '${{ github.event.inputs.status }}' }' > update.json
+
+      - name: Commit and push changes
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+          git add update.json
+          git commit -m "Update server status to ${{ github.event.inputs.status }}"
+          git push
+          
