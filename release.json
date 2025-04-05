@@ -5,5 +5,5 @@
   "game_url": "https://github.com/RevTer14/server-status/releases/download/v1.0.1/app-game-release.apk",
   "samp_list_url": "https://mobile.newgamersrp.com/data/samp_list.json",
   "full_list_url": "https://mobile.newgamersrp.com/data/full_list.json",
-  "lite_list_url": "https://mobile.newgamersrp.com/data/lite_list.json"
+  "lite_list_url": "https://raw.githubusercontent.com/SakataGintosep/samp-assest/main/data_list.json"
 }
